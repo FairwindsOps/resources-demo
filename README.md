@@ -17,4 +17,8 @@ Setting resource requests and limits properly is the very first step towards bui
 
 
 
+## Commands
 
+### Generate Yelb Traffic
+
+`setInterval(() => document.getElementsByClassName('btn-primary')[Math.floor(Math.random() * 4)].click(), 100)`

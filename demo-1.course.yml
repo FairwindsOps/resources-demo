@@ -19,11 +19,11 @@ charts:
     namespace: stress
     values:
       stressCmd: 'stress --cpu 2'
-      replicaCount: 4
+      replicaCount: 8
   mem-stress:
     chart: stress
     repository: sudermanjr
     namespace: stress
     values:
-      stressCmd: 'stress --vm 1 --vm-bytes 1024M'
-      replicaCount: 4
+      stressCmd: 'stress --vm 2 --vm-bytes 4G --vm-keep'
+      replicaCount: 8
