@@ -18,4 +18,10 @@ spec:
       - name: yelb-appserver
         image: mreferre/yelb-appserver:0.5
         ports:
-
+        resources:
+          requests:
+            cpu: 100m
+            memory: 50Mi
+          limits:
+            cpu: 100m
+            memory: 50Mi
