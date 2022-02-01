@@ -1,0 +1,17 @@
+# Minor modification from http://www.it20.info/2017/07/yelb-yet-another-sample-app/ for demo purposes
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-server
+  labels:
+    app: redis-server
+    tier: cache
+  namespace: yelb
+spec:
+  type: ClusterIP
+  ports:
+  - port: 6379
+  selector:
+    app: redis-server
+    tier: cache
+

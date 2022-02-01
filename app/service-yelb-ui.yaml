@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: yelb-ui
+  labels:
+    app: yelb-ui
+    tier: frontend
+  namespace: yelb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 30001
+  selector:
+    app: yelb-ui
+    tier: frontend
+

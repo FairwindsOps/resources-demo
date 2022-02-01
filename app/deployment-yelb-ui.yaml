@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yelb-ui
+  namespace: yelb
+spec:
+  selector:
+    matchLabels:
+      app: yelb-ui
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: yelb-ui
+        tier: frontend
+    spec:
+      containers:
+      - name: yelb-ui
+        image: mreferre/yelb-ui:0.6
+        ports:
+        - containerPort: 80
+
