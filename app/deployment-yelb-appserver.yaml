@@ -17,11 +17,18 @@ spec:
       containers:
       - name: yelb-appserver
         image: mreferre/yelb-appserver:0.5
-        ports:
+        livenessProbe:
+          httpGet:
+            path: /api/getstats
+            port: 4567
+        readinessProbe:
+          httpGet:
+            path: /api/getstats
+            port: 4567
         resources:
           requests:
-            cpu: 100m
+            cpu: 1
             memory: 50Mi
           limits:
-            cpu: 100m
+            cpu: 1
             memory: 50Mi

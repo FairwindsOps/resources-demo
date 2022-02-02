@@ -11,8 +11,8 @@ metadata:
   name: yelb-appserver
   namespace: yelb
 spec:
-  maxReplicas: 10
-  minReplicas: 1
+  maxReplicas: 2
+  minReplicas: 2
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
