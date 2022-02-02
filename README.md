@@ -47,7 +47,5 @@ Symptoms:
 Symptoms:
 - OOM Kill
 
-## Demo 4 - requests with no limits
-
-## Demo 5 - requests and limits are far apart
+## Demo 4 - requests and limits are far apart
 
