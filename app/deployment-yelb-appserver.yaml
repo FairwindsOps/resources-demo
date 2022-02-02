@@ -7,7 +7,6 @@ spec:
   selector:
     matchLabels:
       app: yelb-appserver
-  replicas: 2
   template:
     metadata:
       labels:
@@ -27,7 +26,7 @@ spec:
             port: 4567
         resources:
           requests:
-            cpu: 500m
+            cpu: 10m
             memory: 50Mi
           limits:
             cpu: 500m

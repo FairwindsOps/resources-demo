@@ -7,7 +7,6 @@ spec:
   selector:
     matchLabels:
       app: yelb-ui
-  replicas: 1
   template:
     metadata:
       labels:

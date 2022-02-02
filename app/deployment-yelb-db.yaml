@@ -22,7 +22,7 @@ spec:
         resources:
           requests:
             cpu: 1
-            memory: 500Mi
+            memory: 4Gi
           limits:
             cpu: 1
-            memory: 500Mi
+            memory: 4Gi
