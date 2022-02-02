@@ -10,5 +10,5 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: yelb-appserver
-  targetCPUUtilizationPercentage: 80
+  targetCPUUtilizationPercentage: 20
 

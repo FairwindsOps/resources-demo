@@ -15,7 +15,9 @@ I have an existing cluster that has a service running in it that is properly con
 - node autoscaling enabled 1-3 nodes per zone
 - 3 zones
 
-## Demo 1 - no requests or limits
+## Scenarios
+
+### Demo 1 - no requests or limits
 
 Start up both cpu and memory eaters with no requests or limits.
 
@@ -29,7 +31,7 @@ Symptoms:
 - HPAs do not function
 - No effect on the existing app because of QoS and Eviction policies
 
-## Demo 2 - cpu limits too low
+### Demo 2 - cpu limits too low
 
 Change the original app to have really low CPU limits. Observe behavior and run tests.
 
@@ -42,20 +44,29 @@ Steps:
 Symptoms:
 - CPU Throttling - Request time goes _way_ up
 
-## Demo 3 - memory limits too low
+### Demo 3 - memory limits too low
 
 Symptoms:
 - OOM Kill
 
-## Demo 4 - requests and limits are far apart
+### Demo 4 - requests and limits are far apart
 
 Steps:
 - Remove stress namespace
 - Set yelb appserver request to 10 and limit to 500 (nothing changes right now)
 - Set yelb appserver hpa max to 200
-- Hit with really hard load. 500vus and 10000 iterations (would go more vus, but I hit too many open files)
+- Hit with really hard load. 500vus and 10000 iterations (would go more vus, but I hit too many open files) `k6 run load.js -i 10000 --vus=200`
 
 Symptoms:
 - Pods scale too quickly. HPA percentages are on request, not limit.
 - Nodes can become over-provisioned.
 
+## Tools Used
+
+[LoadImpact](https://k6.io/) - By far my favorite easy load testing tool. Has a _ton_ of functionality, but also satisfies the quick and easy.
+
+[k9s](https://k9scli.io/) - A TUI (text-based user interface) for Kubernetes.
+
+[yelb](https://github.com/mreferre/yelb) - This is a really great multi-tiered application for examples and testing.
+
+[kube-capacity](https://github.com/robscott/kube-capacity) - Shows your current resource allocation and utilization
