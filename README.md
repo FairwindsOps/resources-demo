@@ -52,6 +52,6 @@ Symptoms:
 Steps:
 - Remove stress namespace
 - Set yelb appserver request to 10 and limit to 500 (nothing changes right now)
-- Set yelb appserver replicas to 100
+- Set yelb appserver hpa max to 200
 - Hit with really hard load. 500vus and 10000 iterations (would go more vus, but I hit too many open files)
 
