@@ -19,6 +19,11 @@ I have an existing cluster that has a service running in it that is properly con
 
 Start up both cpu and memory eaters with no requests or limits.
 
+Steps:
+- reckoner plot demo-1.course.yaml
+- run loadtest
+- kubectl get po -A
+
 Symptoms:
 - Pods get evicted continuously when trying to run a lot of them
 - HPAs do not function
@@ -33,7 +38,7 @@ Steps:
 - Set yelb-appserver to a request of 500m and loadtest
 
 Symptoms:
-- CPU Throttling
+- CPU Throttling - Request time goes _way_ up
 
 ## Demo 3 - memory limits too low
 
