@@ -55,3 +55,7 @@ Steps:
 - Set yelb appserver hpa max to 200
 - Hit with really hard load. 500vus and 10000 iterations (would go more vus, but I hit too many open files)
 
+Symptoms:
+- Pods scale too quickly. HPA percentages are on request, not limit.
+- Nodes can become over-provisioned.
+
