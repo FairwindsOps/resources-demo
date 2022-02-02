@@ -20,6 +20,3 @@ charts:
     values:
       stressCmd: 'stress --cpu 2'
       replicaCount: 8
-      resources:
-        limits:
-          cpu: 1
