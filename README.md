@@ -34,8 +34,10 @@ Symptoms:
 Change the original app to have really low CPU limits. Observe behavior and run tests.
 
 Steps:
-- Set yelb-appserver to a request of 1m and loadtest
-- Set yelb-appserver to a request of 500m and loadtest
+- Set yelb-appserver to a limit of 10m and observe probes failing
+- Set yelb-appserver to a limit of 50m and loadtest a couple times
+- Set yelb-appserver to a limit of 300m and loadtest
+- Set yelb-appserver to a limit of 500m and loadtest
 
 Symptoms:
 - CPU Throttling - Request time goes _way_ up
