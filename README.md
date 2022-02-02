@@ -28,6 +28,10 @@ Symptoms:
 
 Change the original app to have really low CPU limits. Observe behavior and run tests.
 
+Steps:
+- Set yelb-appserver to a request of 1m and loadtest
+- Set yelb-appserver to a request of 500m and loadtest
+
 Symptoms:
 - CPU Throttling
 
@@ -40,10 +44,3 @@ Symptoms:
 
 ## Demo 5 - requests and limits are far apart
 
-
-
-## Commands
-
-### Generate Yelb Traffic
-
-`setInterval(() => document.getElementsByClassName('btn-primary')[Math.floor(Math.random() * 4)].click(), 100)`

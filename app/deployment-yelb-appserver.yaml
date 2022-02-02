@@ -27,8 +27,8 @@ spec:
             port: 4567
         resources:
           requests:
-            cpu: 1
+            cpu: 500m
             memory: 50Mi
           limits:
-            cpu: 1
+            cpu: 500m
             memory: 50Mi
