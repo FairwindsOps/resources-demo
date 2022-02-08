@@ -4,10 +4,6 @@
 
 Setting resource requests and limits properly is the very first step towards building a stable and efficient Kubernetes cluster. Setting them incorrectly can lead to very interesting and unstable situations. The goal of these demos is to show different situations that can be cause by incorrect settings.
 
-Scenario:
-
-I have an existing cluster that has a service running in it that is properly configured. Resource requests/limits, HPA, cluster autoscaling, etc. I am deploying a _new_ service to that cluster. This service contains two different deployments, one is CPU intensive, one is Memory intensive.
-
 ## The Cluster
 
 - GKE - 1.21.6-gke.1500
@@ -22,7 +18,7 @@ I have an existing cluster that has a service running in it that is properly con
 Start up both cpu and memory eaters with no requests or limits.
 
 Steps:
-- reckoner plot demo-1.course.yaml
+- reckoner plot demo-1.course.yaml -a
 - run loadtest
 - kubectl get po -A
 
