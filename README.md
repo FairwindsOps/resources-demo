@@ -8,7 +8,7 @@ Setting resource requests and limits properly is the very first step towards bui
 
 - GKE - 1.21.6-gke.1500
 - n2-standard-2 (2 CPU, 8GB Mem)
-- node autoscaling enabled 1-3 nodes per zone
+- node autoscaling enabled 1-2 nodes per zone
 - 3 zones
 
 ## Scenarios
@@ -33,9 +33,8 @@ Change the original app to have really low CPU limits. Observe behavior and run 
 
 Steps:
 - Set yelb-appserver to a limit of 10m and observe probes failing
-- Set yelb-appserver to a limit of 50m and loadtest a couple times
+- Set yelb-appserver to a limit of 40m and loadtest a couple times
 - Set yelb-appserver to a limit of 300m and loadtest
-- Set yelb-appserver to a limit of 500m and loadtest
 
 Symptoms:
 - CPU Throttling - Request time goes _way_ up
