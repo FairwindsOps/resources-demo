@@ -1,4 +1,4 @@
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
   name: yelb-appserver
@@ -10,5 +10,32 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: yelb-appserver
-  targetCPUUtilizationPercentage: 50
-
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+#  behavior:
+#    scaleDown:
+#      stabilizationWindowSeconds: 120
+#      policies:
+#      - type: Percent
+#        value: 20
+#        periodSeconds: 30
+#      - type: Pods
+#        value: 2
+#        periodSeconds: 30
+#      selectPolicy: Min
+#    scaleUp:
+#      stabilizationWindowSeconds: 0
+#      policies:
+#      - type: Percent
+#        value: 100
+#        periodSeconds: 15
+#      - type: Pods
+#        value: 4
+#        periodSeconds: 15
+#      selectPolicy: Max
+#
