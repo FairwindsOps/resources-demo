@@ -71,6 +71,8 @@ Symptoms:
 
 ## Tools Used
 
+[Fairwinds Insights](https://insights.fairwinds.com) - Kubernetes Security & Governance Software
+
 [LoadImpact](https://k6.io/) - By far my favorite easy load testing tool. Has a _ton_ of functionality, but also satisfies the quick and easy.
 
 [k9s](https://k9scli.io/) - A TUI (text-based user interface) for Kubernetes.
