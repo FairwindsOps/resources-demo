@@ -1,0 +1,29 @@
+_references: {}
+namespace: default
+repository: sudermanjr
+context: gke_fairwinds-ops_us-central1_resources-demo
+repositories:
+  sudermanjr:
+    url: https://charts.sudermanjr.com
+namespace_management:
+  default:
+    metadata:
+      annotations:
+        ManagedBy: Reckoner
+    settings:
+      overwrite: true
+charts:
+  resource-usage:
+    chart: stress
+    repository: sudermanjr
+    namespace: using-resources
+    values:
+      stressCmd: 'stress --cpu 2 --vm 1 --vm-bytes 500MB --vm-keep'
+      replicaCount: 4
+      resources:
+        limits:
+          cpu: 1
+          memory: 1Gi
+        requests:
+          cpu: 1
+          memory: 1Gi
