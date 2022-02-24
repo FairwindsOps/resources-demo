@@ -27,3 +27,242 @@ charts:
         requests:
           cpu: 1
           memory: 1Gi
+  load:
+    chart: load-generator
+    repository: fairwinds-incubator
+    namespace: load
+    values:
+      image:
+        tag: 0.27.1
+      replicaCount: 6
+      k6:
+        duration: 12h
+        VUs: 5
+        maxVUs: 5
+        rps: 200
+      loadScript: |
+        // Creator: k6 Browser Recorder 0.6.0
+
+        import { sleep, group, check } from 'k6'
+        import http from 'k6/http'
+
+        export const options = { vus: 10, iterations: '10' }
+
+        export default function main() {
+          let response
+
+          group('page_1 - http://34.135.31.74/', function () {
+            response = http.get(`http://34.135.31.74`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/ihop`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/chipotle`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/bucadibeppo`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/outback`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/outback`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/outback`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/outback`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/chipotle`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `34.135.31.74`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+          })
+        }
+
