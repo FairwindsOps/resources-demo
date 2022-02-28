@@ -13,20 +13,6 @@ namespace_management:
     settings:
       overwrite: true
 charts:
-  resource-usage:
-    chart: stress
-    repository: sudermanjr
-    namespace: using-resources
-    values:
-      stressCmd: 'stress --cpu 2 --vm 1 --vm-bytes 500MB --vm-keep'
-      replicaCount: 4
-      resources:
-        limits:
-          cpu: 1
-          memory: 1Gi
-        requests:
-          cpu: 1
-          memory: 1Gi
   load:
     chart: load-generator
     repository: fairwinds-incubator
@@ -34,7 +20,14 @@ charts:
     values:
       image:
         tag: 0.27.1
-      replicaCount: 6
+      replicaCount: 10
+      resources:
+        requests:
+          cpu: 100m
+          memory: 150Mi
+        limits:
+          cpu: 100m
+          memory: 150Mi
       k6:
         duration: 12h
         VUs: 5
