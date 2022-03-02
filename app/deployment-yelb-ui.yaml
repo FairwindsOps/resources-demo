@@ -16,6 +16,7 @@ spec:
       containers:
       - name: yelb-ui
         image: mreferre/yelb-ui:0.6
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         livenessProbe:

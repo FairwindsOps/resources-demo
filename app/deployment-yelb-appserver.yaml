@@ -16,6 +16,7 @@ spec:
       containers:
       - name: yelb-appserver
         image: mreferre/yelb-appserver:0.5
+        imagePullPolicy: Always
         livenessProbe:
           httpGet:
             path: /api/getstats
