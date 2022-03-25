@@ -13,6 +13,13 @@ spec:
       paths:
       - backend:
           service:
+            name: yelb-appserver
+            port:
+              name: http
+        path: /api
+        pathType: ImplementationSpecific
+      - backend:
+          service:
             name: yelb-ui
             port:
               name: http

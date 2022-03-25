@@ -15,8 +15,11 @@ spec:
     spec:
       containers:
       - name: yelb-ui
-        image: mreferre/yelb-ui:0.6
+        image: quay.io/fairwinds/yelb-ui:f38890ad009f4cda9ccfb030fa0fab4353e849fb
         imagePullPolicy: Always
+        env:
+          - name: UI_ENV
+            value: prod
         ports:
         - containerPort: 80
         livenessProbe:
