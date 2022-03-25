@@ -45,6 +45,37 @@ charts:
           - secretName: goldilocks-tls
             hosts:
             - goldilocks.kepler.hillghost.com
+  load-basic:
+    chart: load-generator
+    repository: fairwinds-incubator
+    namespace: load
+    values:
+      image:
+        tag: 0.27.1
+      replicaCount: 10
+      resources:
+        requests:
+          cpu: 60m
+          memory: 150Mi
+        limits:
+          cpu: 60m
+          memory: 150Mi
+      k6:
+        duration: 12h
+        VUs: 5
+        maxVUs: 5
+        rps: 200
+      loadScript: |
+        import http from "k6/http";
+        import { check, fail } from "k6";
+
+        export default function() {
+            let res1 = http.get(`https://demo.aahirkston.kepler.hillghost.com`);
+
+            check(res1, {
+                "Status 200": (r) => r.status === 200
+            });
+        };
   load:
     chart: load-generator
     repository: fairwinds-incubator

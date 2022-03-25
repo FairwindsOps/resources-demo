@@ -4,7 +4,7 @@ metadata:
   name: yelb-ui
   namespace: yelb
 spec:
-  maxReplicas: 2
+  maxReplicas: 10
   minReplicas: 2
   scaleTargetRef:
     apiVersion: apps/v1
