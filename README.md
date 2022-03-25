@@ -44,19 +44,6 @@ Symptoms:
 Symptoms:
 - OOM Kill
 
-### Polling Question
-
-```
-What is your greatest opportunity to improve your Kubernetes environment?
-
-
-1. Getting help with the basics
-1. General best practices assessment
-1. Improving the security posture of your clusters
-1. Saving money
-1. Improving the reliability of apps running in Kubernetes
-```
-
 ### Demo 4 - requests and limits are far apart
 
 Steps:
