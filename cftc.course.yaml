@@ -70,7 +70,7 @@ charts:
         import { check, fail } from "k6";
 
         export default function() {
-            let res1 = http.get(`https://demo.aahirkston.kepler.hillghost.com`);
+            let res1 = http.get(`https://demo.aahirkston.kepler.hillghost.com/ping`);
 
             check(res1, {
                 "Status 200": (r) => r.status === 200
