@@ -9,8 +9,8 @@ export default function main() {
   let target=`${__ENV.TARGET}`
   let response
 
-  group('page_1 - http://$target/', function () {
-    response = http.get(`http://${target}`, {
+  group('page_1 - https://$target/', function () {
+    response = http.get(`https://${target}`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -22,7 +22,7 @@ export default function main() {
       },
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/ihop`, {
+    response = http.get(`https://${target}/api/ihop`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -34,32 +34,7 @@ export default function main() {
       },
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/getvotes`, {
-      headers: {
-        host: `${target}`,
-        accept: 'application/json, text/plain, */*',
-        'accept-language': 'en-US,en;q=0.5',
-        'accept-encoding': 'gzip, deflate',
-        dnt: '1',
-        connection: 'keep-alive',
-        'sec-gpc': '1',
-      },
-    })
-    check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    sleep(0.5)
-    response = http.get(`http://${target}/api/chipotle`, {
-      headers: {
-        host: `${target}`,
-        accept: 'application/json, text/plain, */*',
-        'accept-language': 'en-US,en;q=0.5',
-        'accept-encoding': 'gzip, deflate',
-        dnt: '1',
-        connection: 'keep-alive',
-        'sec-gpc': '1',
-      },
-    })
-    check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/getvotes`, {
+    response = http.get(`https://${target}/api/getvotes`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -72,7 +47,7 @@ export default function main() {
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
     sleep(0.5)
-    response = http.get(`http://${target}/api/bucadibeppo`, {
+    response = http.get(`https://${target}/api/chipotle`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -84,32 +59,7 @@ export default function main() {
       },
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/getvotes`, {
-      headers: {
-        host: `${target}`,
-        accept: 'application/json, text/plain, */*',
-        'accept-language': 'en-US,en;q=0.5',
-        'accept-encoding': 'gzip, deflate',
-        dnt: '1',
-        connection: 'keep-alive',
-        'sec-gpc': '1',
-      },
-    })
-    check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    sleep(0.5)
-    response = http.get(`http://${target}/api/outback`, {
-      headers: {
-        host: `${target}`,
-        accept: 'application/json, text/plain, */*',
-        'accept-language': 'en-US,en;q=0.5',
-        'accept-encoding': 'gzip, deflate',
-        dnt: '1',
-        connection: 'keep-alive',
-        'sec-gpc': '1',
-      },
-    })
-    check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/getvotes`, {
+    response = http.get(`https://${target}/api/getvotes`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -122,7 +72,7 @@ export default function main() {
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
     sleep(0.5)
-    response = http.get(`http://${target}/api/outback`, {
+    response = http.get(`https://${target}/api/bucadibeppo`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -134,32 +84,7 @@ export default function main() {
       },
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/getvotes`, {
-      headers: {
-        host: `${target}`,
-        accept: 'application/json, text/plain, */*',
-        'accept-language': 'en-US,en;q=0.5',
-        'accept-encoding': 'gzip, deflate',
-        dnt: '1',
-        connection: 'keep-alive',
-        'sec-gpc': '1',
-      },
-    })
-    check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    sleep(0.5)
-    response = http.get(`http://${target}/api/outback`, {
-      headers: {
-        host: `${target}`,
-        accept: 'application/json, text/plain, */*',
-        'accept-language': 'en-US,en;q=0.5',
-        'accept-encoding': 'gzip, deflate',
-        dnt: '1',
-        connection: 'keep-alive',
-        'sec-gpc': '1',
-      },
-    })
-    check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/getvotes`, {
+    response = http.get(`https://${target}/api/getvotes`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -172,7 +97,7 @@ export default function main() {
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
     sleep(0.5)
-    response = http.get(`http://${target}/api/outback`, {
+    response = http.get(`https://${target}/api/outback`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -184,7 +109,7 @@ export default function main() {
       },
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/getvotes`, {
+    response = http.get(`https://${target}/api/getvotes`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -197,7 +122,7 @@ export default function main() {
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
     sleep(0.5)
-    response = http.get(`http://${target}/api/chipotle`, {
+    response = http.get(`https://${target}/api/outback`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
@@ -209,7 +134,82 @@ export default function main() {
       },
     })
     check(response, { 'status equals 200': response => response.status.toString() === '200' })
-    response = http.get(`http://${target}/api/getvotes`, {
+    response = http.get(`https://${target}/api/getvotes`, {
+      headers: {
+        host: `${target}`,
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate',
+        dnt: '1',
+        connection: 'keep-alive',
+        'sec-gpc': '1',
+      },
+    })
+    check(response, { 'status equals 200': response => response.status.toString() === '200' })
+    sleep(0.5)
+    response = http.get(`https://${target}/api/outback`, {
+      headers: {
+        host: `${target}`,
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate',
+        dnt: '1',
+        connection: 'keep-alive',
+        'sec-gpc': '1',
+      },
+    })
+    check(response, { 'status equals 200': response => response.status.toString() === '200' })
+    response = http.get(`https://${target}/api/getvotes`, {
+      headers: {
+        host: `${target}`,
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate',
+        dnt: '1',
+        connection: 'keep-alive',
+        'sec-gpc': '1',
+      },
+    })
+    check(response, { 'status equals 200': response => response.status.toString() === '200' })
+    sleep(0.5)
+    response = http.get(`https://${target}/api/outback`, {
+      headers: {
+        host: `${target}`,
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate',
+        dnt: '1',
+        connection: 'keep-alive',
+        'sec-gpc': '1',
+      },
+    })
+    check(response, { 'status equals 200': response => response.status.toString() === '200' })
+    response = http.get(`https://${target}/api/getvotes`, {
+      headers: {
+        host: `${target}`,
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate',
+        dnt: '1',
+        connection: 'keep-alive',
+        'sec-gpc': '1',
+      },
+    })
+    check(response, { 'status equals 200': response => response.status.toString() === '200' })
+    sleep(0.5)
+    response = http.get(`https://${target}/api/chipotle`, {
+      headers: {
+        host: `${target}`,
+        accept: 'application/json, text/plain, */*',
+        'accept-language': 'en-US,en;q=0.5',
+        'accept-encoding': 'gzip, deflate',
+        dnt: '1',
+        connection: 'keep-alive',
+        'sec-gpc': '1',
+      },
+    })
+    check(response, { 'status equals 200': response => response.status.toString() === '200' })
+    response = http.get(`https://${target}/api/getvotes`, {
       headers: {
         host: `${target}`,
         accept: 'application/json, text/plain, */*',
