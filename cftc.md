@@ -13,7 +13,5 @@
 
 - Show workloads that are running (demo and yelb)
 - Talk about load generation
+- Talk about prometheus integrated with VPA
 - Yelb DB could use a bump up
-
-
-

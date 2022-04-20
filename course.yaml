@@ -1,7 +1,7 @@
 _references: {}
 namespace: default
 repository: sudermanjr
-context: aahirkston.kepler.hillghost.com
+context: gke_fairwinds-ops_us-central1_resources-demo
 repositories:
   sudermanjr:
     url: https://charts.sudermanjr.com
@@ -15,6 +15,24 @@ namespace_management:
     settings:
       overwrite: true
 charts:
+  # helm install cilium cilium/cilium --namespace kube-system  --set nodeinit.enabled=true  --set nodeinit.reconfigureKubelet=true  --set nodeinit.removeCbrBridge=true  --set cni.binPath=/home/kubernetes/bin  --set gke.enabled=true  --set ipam.mode=kubernetes  --set ipv4NativeRoutingCIDR=10.88.0.0/14
+  cilium:
+    chart: cilium
+    namespace: kube-system
+    version: 1.11.3
+    repository: cilium
+    values:
+      nodeinit:
+        enabled: true
+        reconfigureKubelet: true
+        removeCbrBridge: true
+      cni:
+        binPath: /home/kubernetes/bin
+      gke:
+        enabled: true
+      ipam:
+        mode: kubernetes
+      ipv4NativeRoutingCIDR: 10.88.0.0/14
   goldilocks:
     chart: goldilocks
     namespace: goldilocks
