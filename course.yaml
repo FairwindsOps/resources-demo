@@ -125,8 +125,8 @@ charts:
         export default function main() {
           let response
 
-          group('page_1 - https://yelb.kepler.hillghost.com/', function () {
-            response = http.get(`https://yelb.kepler.hillghost.com`, {
+          group('page_1 - http://34.135.31.74/', function () {
+            response = http.get(`http://34.135.31.74`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -138,7 +138,7 @@ charts:
               },
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/ihop`, {
+            response = http.get(`http://34.135.31.74/api/ihop`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -150,32 +150,7 @@ charts:
               },
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/getvotes`, {
-              headers: {
-                host: `yelb.kepler.hillghost.com`,
-                accept: 'application/json, text/plain, */*',
-                'accept-language': 'en-US,en;q=0.5',
-                'accept-encoding': 'gzip, deflate',
-                dnt: '1',
-                connection: 'keep-alive',
-                'sec-gpc': '1',
-              },
-            })
-            check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            sleep(0.5)
-            response = http.get(`https://yelb.kepler.hillghost.com/api/chipotle`, {
-              headers: {
-                host: `yelb.kepler.hillghost.com`,
-                accept: 'application/json, text/plain, */*',
-                'accept-language': 'en-US,en;q=0.5',
-                'accept-encoding': 'gzip, deflate',
-                dnt: '1',
-                connection: 'keep-alive',
-                'sec-gpc': '1',
-              },
-            })
-            check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/getvotes`, {
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -188,7 +163,7 @@ charts:
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
             sleep(0.5)
-            response = http.get(`https://yelb.kepler.hillghost.com/api/bucadibeppo`, {
+            response = http.get(`http://34.135.31.74/api/chipotle`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -200,32 +175,7 @@ charts:
               },
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/getvotes`, {
-              headers: {
-                host: `yelb.kepler.hillghost.com`,
-                accept: 'application/json, text/plain, */*',
-                'accept-language': 'en-US,en;q=0.5',
-                'accept-encoding': 'gzip, deflate',
-                dnt: '1',
-                connection: 'keep-alive',
-                'sec-gpc': '1',
-              },
-            })
-            check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            sleep(0.5)
-            response = http.get(`https://yelb.kepler.hillghost.com/api/outback`, {
-              headers: {
-                host: `yelb.kepler.hillghost.com`,
-                accept: 'application/json, text/plain, */*',
-                'accept-language': 'en-US,en;q=0.5',
-                'accept-encoding': 'gzip, deflate',
-                dnt: '1',
-                connection: 'keep-alive',
-                'sec-gpc': '1',
-              },
-            })
-            check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/getvotes`, {
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -238,7 +188,7 @@ charts:
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
             sleep(0.5)
-            response = http.get(`https://yelb.kepler.hillghost.com/api/outback`, {
+            response = http.get(`http://34.135.31.74/api/bucadibeppo`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -250,32 +200,7 @@ charts:
               },
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/getvotes`, {
-              headers: {
-                host: `yelb.kepler.hillghost.com`,
-                accept: 'application/json, text/plain, */*',
-                'accept-language': 'en-US,en;q=0.5',
-                'accept-encoding': 'gzip, deflate',
-                dnt: '1',
-                connection: 'keep-alive',
-                'sec-gpc': '1',
-              },
-            })
-            check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            sleep(0.5)
-            response = http.get(`https://yelb.kepler.hillghost.com/api/outback`, {
-              headers: {
-                host: `yelb.kepler.hillghost.com`,
-                accept: 'application/json, text/plain, */*',
-                'accept-language': 'en-US,en;q=0.5',
-                'accept-encoding': 'gzip, deflate',
-                dnt: '1',
-                connection: 'keep-alive',
-                'sec-gpc': '1',
-              },
-            })
-            check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/getvotes`, {
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -288,7 +213,7 @@ charts:
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
             sleep(0.5)
-            response = http.get(`https://yelb.kepler.hillghost.com/api/outback`, {
+            response = http.get(`http://34.135.31.74/api/outback`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -300,7 +225,7 @@ charts:
               },
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/getvotes`, {
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -313,7 +238,7 @@ charts:
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
             sleep(0.5)
-            response = http.get(`https://yelb.kepler.hillghost.com/api/chipotle`, {
+            response = http.get(`http://34.135.31.74/api/outback`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
@@ -325,7 +250,82 @@ charts:
               },
             })
             check(response, { 'status equals 200': response => response.status.toString() === '200' })
-            response = http.get(`https://yelb.kepler.hillghost.com/api/getvotes`, {
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `yelb.kepler.hillghost.com`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/outback`, {
+              headers: {
+                host: `yelb.kepler.hillghost.com`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `yelb.kepler.hillghost.com`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/outback`, {
+              headers: {
+                host: `yelb.kepler.hillghost.com`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
+              headers: {
+                host: `yelb.kepler.hillghost.com`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            sleep(0.5)
+            response = http.get(`http://34.135.31.74/api/chipotle`, {
+              headers: {
+                host: `yelb.kepler.hillghost.com`,
+                accept: 'application/json, text/plain, */*',
+                'accept-language': 'en-US,en;q=0.5',
+                'accept-encoding': 'gzip, deflate',
+                dnt: '1',
+                connection: 'keep-alive',
+                'sec-gpc': '1',
+              },
+            })
+            check(response, { 'status equals 200': response => response.status.toString() === '200' })
+            response = http.get(`http://34.135.31.74/api/getvotes`, {
               headers: {
                 host: `yelb.kepler.hillghost.com`,
                 accept: 'application/json, text/plain, */*',
